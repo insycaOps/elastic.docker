@@ -4,3 +4,7 @@ Azure Container Instances are limited in defining environment variables. For a q
 
 Azure Container Group Deployment (Elasticsearch and Kibana):
 Microsoft Deployment Tutorial: https://docs.microsoft.com/en-us/azure/container-instances/container-instances-multi-container-yaml
+Follow the instructions from the tutorial and use "deploy-aci.yaml" for ready-to-use Elasticsearch and Kibana Container.
+
+Azure CLI Command for Deployment:
+az container create --resource-group operations_00 --file deploy-aci.yaml
