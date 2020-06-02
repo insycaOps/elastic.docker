@@ -1,0 +1,38 @@
+apiVersion: 2018-10-01
+location: westeu
+name: YOUR-AZURE-CONTAINERGROUP-NAME
+properties:
+  containers:
+  - name: es-op-eu-00
+    properties:
+      image: docker.io/insyca/es-dev-azr:1.0
+      resources:
+        requests:
+          cpu: 1
+          memoryInGb: 1.5
+      ports:
+      - port: 9200
+      - port: 9300
+  - name: kb-op-eu-00
+    properties:
+      image: docker.io/insyca/kb-dev-azr:1.0
+      resources:
+        requests:
+          cpu: 1
+          memoryInGb: 1.5
+      ports:
+      - port: 5601
+  osType: Linux
+  ipAddress:
+    type: Public
+    ports:
+    - protocol: tcp
+      port: 5601
+    - protocol: tcp
+      port: 9200
+    - protocol: tcp
+      port: 9300
+    dnsNameLabel:
+        YOUR-AZURE-DNS-NAME
+tags: null
+type: Microsoft.ContainerInstance/containerGroups
